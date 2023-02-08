@@ -11,7 +11,7 @@ public class UmServicoQualquer
 
     public void UmMetodoQualquer()
     {
-        P1.DefinirMetadado("tempo", new Tempo { MomentoDeInicioDoMetodo = DateTime.Now, Fator = 1 });
-        P1.DefinirMetadado("nome", nameof(UmServicoQualquer));
+        var nome = P1.ObterMetadado<string>("nome");
+        Console.WriteLine(nome);
     }
 }

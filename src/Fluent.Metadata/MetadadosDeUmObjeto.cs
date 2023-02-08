@@ -1,4 +1,6 @@
 ﻿using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 
 namespace Fluent.Metadata;
 
@@ -35,4 +37,11 @@ internal class MetadadosDeUmObjeto
 
         return this;
     }
+
+    public bool Eliminar(string chave)
+    {
+        return DicionarioDeMetadadosDeUmObjeto.TryRemove(chave, out _);
+    }
+
+    public int QuantidadeRestante => DicionarioDeMetadadosDeUmObjeto.Count;
 }
